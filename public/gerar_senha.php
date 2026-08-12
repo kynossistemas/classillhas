@@ -49,14 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Cadastrar Novo Usuário - ClassIlhas</title>
-    <style>
-        body { font-family: sans-serif; padding: 20px; background: #f4f4f9; }
-        .box { background: white; padding: 20px; max-width: 400px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .field { margin-bottom: 12px; }
-        .field label { display: block; font-weight: bold; margin-bottom: 5px; }
-        .field input, .field select { width: 100%; padding: 8px; box-sizing: border-box; }
-        button { padding: 10px 15px; background: #28a745; color: white; border: none; border-radius: 4px; cursor: pointer; width: 100%; }
-    </style>
+    
 </head>
 <body>
 
