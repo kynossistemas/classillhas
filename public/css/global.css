@@ -32,6 +32,8 @@ body {
 }
 
 /* 3. COMPONENTES REUTILIZÁVEIS */
+
+/* BOTÕES */
 .btn {
   display: inline-block;
   padding: 10px 20px;
