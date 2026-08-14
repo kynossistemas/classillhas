@@ -54,130 +54,74 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ClassIlhas - Login</title>
+    <title>ClassIlhas - Acesse sua Conta</title>
     
-    <!-- 1. CSS Global (Variáveis, resets, botões básicos) -->
+    <!-- CSS Global e Específico -->
     <link rel="stylesheet" href="css/global.css">
-    
-    <!-- 2. CSS Específico da Landing Page -->
     <link rel="stylesheet" href="css/login.css">
-
 </head>
 <body>
 
-    <div class="main-container">
-        <!-- COLUNA ESQUERDA: Formulário de Login -->
-        <div class="login-section">
-            <div class="header-logo">
-                <img src="img/classilhas_logo.png" alt="Logo ClassIlhas">
-                <div class="top-badge">AMBIENTE SEGURO</div>
-            </div>
+    <main class="login-card">
+        <!-- Cabeçalho do Card -->
+        <header class="login-header">
+            <a href="index.html" class="logo-link" title="Voltar para a página inicial">
+                <img src="img/system/classilhas_logo.png" alt="ClassIlhas Logo">
+            </a>
+            <span class="badge-secure">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                Ambiente Seguro
+            </span>
+        </header>
 
-            <p class="welcome-text">Bem-vindo de volta</p>
-            <h2 class="title">ACESSE SUA CONTA</h2>
+        <section class="login-body">
+            <p class="welcome-text">Bem-vindo de volta!</p>
+            <h1 class="title">Acesse sua Conta</h1>
 
             <?php if (!empty($erro)): ?>
-                <div class="alert"><?php echo htmlspecialchars($erro); ?></div>
+                <div class="alert" role="alert">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                    <span><?php echo htmlspecialchars($erro); ?></span>
+                </div>
             <?php endif; ?>
 
-            <form action="login.php" method="POST">
+            <form action="login.php" method="POST" class="login-form">
                 <div class="form-group">
-                    <label for="email">E-mail ou Usuário</label>
-                    <input type="email" id="email" name="email" placeholder="Ex: nome@escola.com" value="<?php echo htmlspecialchars($email_digitado); ?>" required>
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="seuemail@escola.com" value="<?php echo htmlspecialchars($email_digitado); ?>" required autofocus>
                 </div>
 
                 <div class="form-group">
-                    <label for="senha">Senha</label>
+                    <div class="label-row">
+                        <label for="senha">Senha</label>
+                        <a href="#" class="forgot-link">Esqueceu a senha?</a>
+                    </div>
                     <div class="password-wrapper">
-                        <input type="password" id="senha" name="senha" placeholder="Sua senha segura" required>
-                        <button type="button" class="toggle-btn" onclick="toggleSenha()" aria-label="Mostrar/Esconder senha">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                        <input type="password" id="senha" name="senha" placeholder="Sua senha de acesso" required>
+                        <button type="button" class="toggle-btn" onclick="toggleSenha()" aria-label="Mostrar ou esconder senha">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
                         </button>
                     </div>
                 </div>
 
                 <button type="submit" class="btn-primary">
-                    Acessar o Sistema 
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    Entrar no Sistema
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </button>
-                
-                <a href="#" class="btn-secondary">
-                    &#128274; Esqueci minha senha
-                </a>
             </form>
+        </section>
 
-            <div class="help-box">
-                Caso você não consiga acessar o sistema, verifique suas credenciais ou entre em contato com a secretaria. <a href="#">Clique aqui para ajuda.</a>
-            </div>
+        <!-- Rodapé do Card -->
+        <footer class="login-footer">
+            <p>Precisa de suporte? Entre em contato com a secretaria de sua escola.</p>
+        </footer>
+    </main>
 
-            <div class="help-box" style="text-align: center;">
-                Suporte Técnico: <strong>(00) 00000-0000</strong>
-            </div>
-        </div>
-
-        <!-- COLUNA DIREITA: Painel de Informações -->
-        <div class="info-section">
-            <div class="info-header">
-                <div class="info-badge">NOVIDADES</div>
-                <span class="info-header-text">Plataforma ClassIlhas atualizada</span>
-            </div>
-
-            <h3>NOVA MANEIRA DE ACESSAR O CLASSILHAS!</h3>
-            <p class="sub-text">Uma interface mais limpa, focada na usabilidade e comunicação rápida para alunos e professores.</p>
-
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">&#9889;</div>
-                    <div class="feature-content">
-                        <h4>AGILIDADE</h4>
-                        <p>Acesso rápido ao conteúdo das aulas e notas.</p>
-                    </div>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">&#128172;</div>
-                    <div class="feature-content">
-                        <h4>SUPORTE</h4>
-                        <p>Equipe pronta para ajudar via chat ou e-mail.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="social-section">
-                <div class="social-header">
-                    <div class="social-title-group">
-                        <h4>COMUNICAÇÃO</h4>
-                        <h3>FIQUE POR DENTRO</h3>
-                    </div>
-                    <div class="online-status">
-                        <svg width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" fill="white"/></svg>
-                        ONLINE
-                    </div>
-                </div>
-                <p>Acompanhe comunicados, eventos e calendários escolares diretamente no portal.</p>
-                <div class="social-buttons">
-                    <a href="#" class="btn-social">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo_icon_ios.svg" alt="YouTube" width="16">
-                        Tutorial
-                    </a>
-                    <a href="#" class="btn-social">
-                        &#128196; Blog
-                    </a>
-                </div>
-            </div>
-
-            <div class="info-footer">
-                Portal ClassIlhas • Segurança e privacidade dos seus dados.
-            </div>
-        </div>
-    </div>
-
-    <script src="js/script.js"></script>   
-
+    <script src="js/script.js"></script> 
 </body>
 </html>

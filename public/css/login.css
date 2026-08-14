@@ -1,18 +1,11 @@
-/* Configurações Globais baseadas na imagem */
+/* Variáveis Específicas do Login */
 :root {
-    --primary-blue: #007bff; /* Azul do botão e do lado direito */
+    --primary-blue: #007bff;
     --dark-blue: #0056b3;
-    --bg-light: #f0f4f8; /* Cor de fundo da página */
-    --text-dark: #333;
-    --text-gray: #666;
-    --border-color: #ddd;
-}
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --bg-light: #f4f7fc;
+    --text-main: #1a1a1a;
+    --text-muted: #6c757d;
+    --border-color: #e2e8f0;
 }
 
 body {
@@ -21,91 +14,130 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    margin: 0;
     padding: 20px;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 
-/* Container Principal (Card) */
-.main-container {
-    display: flex;
-    background-color: #fff;
+/* Card Centralizado de Login */
+.login-card {
+    background-color: #ffffff;
     width: 100%;
-    max-width: 1000px;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-}
-
-/* --- Coluna Esquerda (Formulário) --- */
-.login-section {
-    flex: 1;
-    padding: 50px;
+    max-width: 440px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    padding: 40px;
     display: flex;
     flex-direction: column;
+    border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.header-logo {
+/* Header */
+.login-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 30px;
+    margin-bottom: 32px;
 }
 
-.header-logo img {
-  width: 60%;
-  height: auto; /* Mantém a proporção original da imagem */
+.logo-link img {
+    max-width: 150px;
+    height: auto;
+    display: block;
 }
 
-.top-badge {
-    background-color: var(--primary-blue);
-    color: white;
-    padding: 5px 15px;
+.badge-secure {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #e6f0ff;
+    color: var(--primary-blue);
+    padding: 6px 12px;
     border-radius: 20px;
-    font-size: 12px;
-    font-weight: bold;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
+/* Tipografia */
 .welcome-text {
     font-size: 14px;
-    color: var(--text-gray);
-    margin-bottom: 5px;
+    color: var(--text-muted);
+    margin-bottom: 4px;
 }
 
-h2.title {
-    font-size: 24px;
+.title {
+    font-size: 22px;
     font-weight: 800;
-    color: black;
-    margin-bottom: 30px;
-    text-transform: uppercase;
+    color: var(--text-main);
+    margin-bottom: 24px;
 }
 
+/* Alerta de Erro */
+.alert {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #fff2f2;
+    color: #dc3545;
+    border: 1px solid #ffc9c9;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* Formulário */
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .form-group label {
     display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #4a5568;
+    margin-bottom: 6px;
+}
+
+.label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.forgot-link {
     font-size: 12px;
-    font-weight: bold;
-    color: var(--text-gray);
-    margin-bottom: 5px;
-    text-transform: uppercase;
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.forgot-link:hover {
+    text-decoration: underline;
 }
 
 .form-group input {
     width: 100%;
-    padding: 12px 15px;
+    padding: 12px 16px;
     border: 1px solid var(--border-color);
     border-radius: 8px;
     font-size: 14px;
-    transition: border-color 0.2s;
+    color: var(--text-main);
+    background-color: #fafafa;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
 }
 
 .form-group input:focus {
     outline: none;
     border-color: var(--primary-blue);
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
 }
 
-/* Container da Senha com Olho */
+/* Campo da Senha */
 .password-wrapper {
     position: relative;
     display: flex;
@@ -113,7 +145,7 @@ h2.title {
 }
 
 .password-wrapper input {
-    padding-right: 40px; /* Espaço para o ícone */
+    padding-right: 44px;
 }
 
 .toggle-btn {
@@ -122,240 +154,63 @@ h2.title {
     background: none;
     border: none;
     cursor: pointer;
-    font-size: 18px;
-    color: var(--text-gray);
-    padding: 5px;
+    color: var(--text-muted);
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
 }
 
-/* Botões */
+.toggle-btn:hover {
+    color: var(--text-main);
+}
+
+/* Botão de Ação */
 .btn-primary {
     width: 100%;
-    padding: 12px;
+    padding: 14px;
     background-color: var(--primary-blue);
-    color: white;
+    color: #ffffff;
     border: none;
     border-radius: 8px;
-    font-size: 14px;
-    font-weight: bold;
+    font-size: 15px;
+    font-weight: 700;
     cursor: pointer;
-    transition: background-color 0.2s;
-    margin-bottom: 10px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 8px;
+    margin-top: 10px;
 }
 
 .btn-primary:hover {
     background-color: var(--dark-blue);
 }
 
-.btn-secondary {
-    width: 100%;
-    padding: 12px;
-    background-color: #f1f3f5;
-    color: var(--text-dark);
-    border: none;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 30px;
+.btn-primary:active {
+    transform: scale(0.99);
 }
 
-/* Caixas de Ajuda na parte inferior */
-.help-box {
-    background-color: white;
-    border: 1px solid #eee;
-    border-radius: 8px;
-    padding: 15px;
+/* Rodapé do Card */
+.login-footer {
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.login-footer p {
     font-size: 12px;
-    color: var(--text-gray);
-    margin-bottom: 10px;
+    color: var(--text-muted);
     line-height: 1.5;
-}
-
-.help-box a {
-    color: var(--primary-blue);
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* Alerta de Erro PHP */
-.alert {
-    background-color: #f8d7da;
-    color: #721c24;
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid #f5c6cb;
-    margin-bottom: 15px;
-    font-size: 14px;
-}
-
-/* --- Coluna Direita (Informações - Azul) --- */
-.info-section {
-    flex: 1;
-    background-color: var(--primary-blue);
-    padding: 50px;
-    color: white;
-    display: flex;
-    flex-direction: column;
-}
-
-.info-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
-.info-badge {
-    background-color: rgba(255,255,255,0.2);
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-.info-header-text {
-    font-size: 12px;
-    opacity: 0.8;
-}
-
-.info-section h3 {
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-    line-height: 1.2;
-}
-
-.info-section p.sub-text {
-    font-size: 14px;
-    opacity: 0.9;
-    margin-bottom: 30px;
-    line-height: 1.5;
-}
-
-/* Cards de Recursos (Agilidade/Suporte) */
-.features-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    margin-bottom: 30px;
-}
-
-.feature-card {
-    background-color: rgba(255,255,255,0.1);
-    border-radius: 10px;
-    padding: 15px;
-    display: flex;
-    gap: 10px;
-}
-
-.feature-icon {
-    font-size: 20px;
-    margin-top: 2px;
-}
-
-.feature-content h4 {
-    font-size: 12px;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin-bottom: 5px;
-}
-
-.feature-content p {
-    font-size: 11px;
-    opacity: 0.8;
-    line-height: 1.4;
-}
-
-/* Seção Redes Sociais */
-.social-section {
-    background-color: rgba(255,255,255,0.1);
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: auto; /* Empurra o rodapé para baixo */
-}
-
-.social-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.social-title-group h4 {
-    font-size: 10px;
-    opacity: 0.7;
-    text-transform: uppercase;
-}
-
-.social-title-group h3 {
-    font-size: 16px;
     margin: 0;
 }
 
-.online-status {
-    background-color: #20c997;
-    font-size: 10px;
-    padding: 3px 8px;
-    border-radius: 10px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.social-section p {
-    font-size: 12px;
-    opacity: 0.8;
-    margin-bottom: 15px;
-}
-
-.social-buttons {
-    display: flex;
-    gap: 10px;
-}
-
-.btn-social {
-    background-color: white;
-    color: #333;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 8px;
-    font-size: 12px;
-    font-weight: bold;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-}
-
-/* Rodapé da seção azul */
-.info-footer {
-    font-size: 11px;
-    opacity: 0.7;
-    padding-top: 20px;
-}
-
-/* Responsividade para telas menores */
-@media (max-width: 768px) {
-    .main-container {
-        flex-direction: column;
-    }
-    .features-grid {
-        grid-template-columns: 1fr;
-    }
-    .login-section, .info-section {
-        padding: 30px;
+/* Responsividade */
+@media (max-width: 480px) {
+    .login-card {
+        padding: 24px;
     }
 }
