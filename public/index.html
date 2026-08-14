@@ -3,32 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ClassIlhas - Gestão e Geração de Cronogramas</title>
+    <title>ClassIlhas - Gestão e Geração de Cronogramas Escolares</title>
     
-    <!-- 1. CSS Global (Variáveis, resets, botões básicos) -->
+    <!-- CSS Global e Específico -->
     <link rel="stylesheet" href="css/global.css">
-    
-    <!-- 2. CSS Específico da Landing Page -->
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
 
+    <!-- NAVBAR / HEADER -->
     <header class="header-landing">
-        <img src="img/classilhas_logo.png" alt="Logo CLassIlhas">
-        <nav>
-            <a href="" class="btn">Início</a>
-            <a href="" class="btn">Diferencial</a>
-            <a href="" class="btn">Contato</a>
-            <a href="" class="btn">Ajuda</a>
-            <a href="login.php" class="btn btn-primary">Acessar Sistema</a>
-        </nav>
+        <div class="logo-container">
+            <img src="img/system/classilhas_logo.png" alt="Logo ClassIlhas" class="logo-img">
+        </div>
 
+        <!-- Botão Menu Hambúrguer -->
+        <button class="hamburger-menu" id="hamburger-btn" aria-label="Abrir menu de navegação" aria-expanded="false">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <nav class="nav-menu" id="nav-menu">
+            <a href="#inicio" class="nav-link">Início</a>
+            <a href="#recursos" class="nav-link">Recursos</a>
+            <a href="#como-funciona" class="nav-link">Como Funciona</a>
+            <a href="#perfis" class="nav-link">Perfis</a>
+            <a href="login.php" class="btn btn-primary btn-login-nav">Acessar Sistema</a>
+        </nav>
     </header>
 
-    <main class="hero-section">
-        <h2>Gerador Inteligente de Cronogramas Escolares</h2>
-        <p>Otimize horários de professores e salas com facilidade e precisão.</p>
-    </main>
+    <!-- HERO SECTION (Apresentação Principal) -->
+    <section id="inicio" class="hero-section">
+        <div class="hero-container">
+            <div class="hero-text">
+                <span class="badge-tag">Plataforma para Gestão Escolar</span>
+                <h1>Geração e Organização Inteligente de Cronogramas Escolares</h1>
+                <p>O ClassIlhas simplifica a montagem da grade horária da sua instituição. Evite choque de horários entre professores, organize turmas com precisão e mantenha toda a escola integrada.</p>
+                <div class="hero-btns">
+                    <a href="login.php" class="btn btn-primary btn-lg">Entrar no Painel</a>
+                    <a href="#como-funciona" class="btn btn-secondary btn-lg">Ver Funcionalidades</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="img/landing/reuniao-pedagogica.png" alt="Professores e gestão escolar em reunião planejando aulas">
+            </div>
+        </div>
+    </section>
 
+    <!-- RECURSOS / DIFERENCIAIS -->
+    <section id="recursos" class="features-section">
+        <div class="container-landing">
+            <div class="section-title">
+                <h2>Soluções completas para a rotina da sua escola</h2>
+                <p>Desenvolvido para eliminar o estresse na montagem da grade de aulas semanal e mensal.</p>
+            </div>
+
+            <div class="features-grid-landing">
+                <div class="feature-card-landing">
+                    <div class="icon-box">📅</div>
+                    <h3>Sem Choque de Horários</h3>
+                    <p>Validação de disponibilidade que impede que o mesmo professor seja alocado em duas turmas no mesmo horário.</p>
+                </div>
+
+                <div class="feature-card-landing">
+                    <div class="icon-box">🏫</div>
+                    <h3>Gestão Multi-Escolas</h3>
+                    <p>Controle centralizado para administradores gerenciarem múltiplas unidades escolares ou departamentos.</p>
+                </div>
+
+                <div class="feature-card-landing">
+                    <div class="icon-box">👨‍🏫</div>
+                    <h3>Painel do Docente</h3>
+                    <p>Professores acessam facilmente suas grades horárias atualizadas, turmas atribuídas e disciplinas do dia.</p>
+                </div>
+
+                <div class="feature-card-landing">
+                    <div class="icon-box">🔒</div>
+                    <h3>Níveis de Acesso Seguros</h3>
+                    <p>Permissões personalizadas para Super Admins, Administradores de Escola, Professores e Visualizadores.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO COMO FUNCIONA -->
+    <section id="como-funciona" class="how-it-works-section">
+        <div class="container-landing grid-2-col">
+            <div class="side-image">
+                <img src="img/landing/alunos-aprendendo-lousa-digital.png" alt="Ambiente escolar e sala de aula organizada">
+            </div>
+            <div class="side-content">
+                <h2>Como o ClassIlhas atua na sua instituição?</h2>
+                
+                <div class="step-item">
+                    <span class="step-num">1</span>
+                    <div>
+                        <h4>Cadastre a Estrutura da Escola</h4>
+                        <p>Insira as turmas, salas disponíveis, disciplinas e a carga horária necessária.</p>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <span class="step-num">2</span>
+                    <div>
+                        <h4>Vinculação do Corpo Docente</h4>
+                        <p>Atribua professores às suas respectivas matérias e defina suas restrições de horários.</p>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <span class="step-num">3</span>
+                    <div>
+                        <h4>Geração e Consulta do Cronograma</h4>
+                        <p>Visualize e publique a grade pronta para consulta instantânea por professores e alunos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RODAPÉ INSTITUCIONAL -->
+    <footer class="footer-landing">
+        <div class="container-landing footer-content">
+            <div class="footer-brand">
+                <img src="img/system/classilhas_logo.png" alt="Logo ClassIlhas" class="footer-logo">
+                <p>Plataforma para gestão e geração automatizada de cronogramas escolares.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navegação</h4>
+                <a href="#inicio">Início</a>
+                <a href="#recursos">Recursos</a>
+                <a href="#como-funciona">Como Funciona</a>
+                <a href="login.php">Acesso ao Sistema</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; ClassIlhas 2026. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- JS de Navegação Mobile -->
+    <script>
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburgerBtn.addEventListener('click', () => {
+            const isActive = hamburgerBtn.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            hamburgerBtn.setAttribute('aria-expanded', isActive);
+        });
+
+        // Fecha o menu ao clicar em qualquer link
+        document.querySelectorAll('.nav-link, .btn-login-nav').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburgerBtn.classList.remove('active');
+                navMenu.classList.remove('active');
+                hamburgerBtn.setAttribute('aria-expanded', 'false');
+            });
+        });
+    </script>
 </body>
 </html>
